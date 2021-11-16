@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'pages#home'
+  devise_for :users
+  root 'seed#index'
   get 'signup', to: 'users#new'
   resources :users, only: [:new, :create, :show] 
 end
